@@ -1,0 +1,185 @@
+/* Updated App.css for a more modern, responsive weather UI */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@import url(https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.css);
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+#root {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.App {
+  flex: 1;
+  padding: 4vh 8vw;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to bottom right, #e0f2ff, #ffffff);
+  position: relative;
+  transition: background-color 0.3s ease;
+  min-height: 100vh;
+}
+
+.my-heading {
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 2vh;
+}
+
+.weather-summary {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #1e3a8a;
+  margin-bottom: 3vh;
+}
+
+button.ui.icon.button {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  background-color: #1e40af;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+button.ui.icon.button:hover {
+  background-color: #3b82f6;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  left: 40px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #1e3a8a;
+}
+
+.dark .theme-toggle {
+  color: #facc15;
+}
+
+.weather-icon {
+  font-size: 1.3rem;
+  margin-right: 0.5rem;
+}
+
+.weather-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.weather-card {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.2s ease, opacity 0.6s ease;
+  opacity: 0;
+  animation: fadeIn 0.8s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.weather-card.rain {
+  background-color: #dbeafe;
+}
+.weather-card.cloudy {
+  background-color: #e5e7eb;
+}
+.weather-card.clear {
+  background-color: #fef9c3;
+}
+.weather-card.thunder {
+  background-color: #fef3c7;
+}
+.weather-card.snow {
+  background-color: #e0f2f1;
+}
+
+.weather-card .date {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #1f2937;
+}
+
+.weather-card .temp {
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+
+.weather-card .type {
+  font-size: 0.95rem;
+  color: #374151;
+}
+
+.dark {
+  background: linear-gradient(to bottom right, #1e293b, #0f172a);
+  color: white;
+}
+
+.dark .my-heading {
+  color: white;
+}
+
+.dark .weather-summary {
+  color: #facc15;
+}
+
+.dark .weather-card {
+  background-color: #2c2c2c;
+  color: #f1f5f9;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.dark .weather-card.rain {
+  background-color: #1e3a8a;
+}
+.dark .weather-card.cloudy {
+  background-color: #374151;
+}
+.dark .weather-card.clear {
+  background-color: #4b5563;
+}
+.dark .weather-card.thunder {
+  background-color: #78350f;
+}
+.dark .weather-card.snow {
+  background-color: #334155;
+}
+
+.dark .weather-card .type {
+  color: #d1d5db;
+}
+
+.dark .weather-card .date {
+  color: #facc15;
+}
